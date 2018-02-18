@@ -1,0 +1,45 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
+<!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
+  <head data-hook="inside_head">
+    <%= render partial: 'spree/shared/head' %>
+  </head>
+  <body class="unresponsive <%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+    <%= render partial: 'spree/shared/google_analytics.js' %>
+    <%= render partial: 'spree/shared/header' %>
+
+    <div class="container">
+      <div class="row" data-hook>
+        <%= breadcrumbs(@taxon) %>
+
+        <%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
+
+        <div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
+          <%= flash_messages %>
+          <%= yield %>
+        </div>
+
+        <%= yield :templates %>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="separator"></div>
+      <div class="container">
+        <div class="text-muted">
+          <div class="col-xs-12 text-center">
+            Доставка товаров по всей Украине службами <a href="https://novaposhta.ua/ru" target="_blank">"Новая Почта"</a> и <a href="https://intime.ua" target="_blank">"Intime"</a>.<br>
+            Курс валют: $1 = 27.25грн предоставлено <a href="http://minfin.com.ua" target="_blank">minfin.com.ua</a> 
+          </div>
+          <div class="col-xs-12">
+            <div class="col-xs-12 text-center">
+              <p class="copyright">© 2016-2017, jsonjquery@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

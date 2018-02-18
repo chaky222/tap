@@ -1,0 +1,15 @@
+<li id="login_logout_li">
+  <div class="my_orders_link_block">
+    <% if spree_current_user %>  
+      <span id="my_orders_link" class="login_logout_span"><%= link_to Spree.t(:my_account), spree.account_path %></span>
+      <span id="logout_link" title="Выйти из текущего профиля" class="login_logout_span logout_button">
+        <%= link_to(spree.logout_path) do %>
+          <span class="glyphicon glyphicon-log-out"></span>
+        <% end %> 
+      </span>
+    <% else %>
+      <span id="link-to-account" class="login_logout_span"><%= link_to Spree.t(:my_account), spree.account_path %></span>
+      <span id="link-to-login"   class="login_logout_span"><%= link_to Spree.t(:login), spree.login_path %></span>
+    <% end %>
+  </div>
+</li>

@@ -1,0 +1,15 @@
+ru:
+  spree:         
+    my_account: "Мои заказы"  
+    home: "Главная"
+    login: "Вход"
+    login_name: "Логин"
+    all_departments: "Везде"
+    order_adjustments: "Порядок оплаты"
+    wo_prepaid_total: "При получении товара в руки"
+  devise:
+    sessions: 
+      spree_user:
+        signed_out: "Сессия успешно завершена."
+
+

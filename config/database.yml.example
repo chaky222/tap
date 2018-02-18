@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: tap
+  # host: localhost
+  pool: 10
+  username: username
+  password: password
+  # min_messages: warning
+
+production:
+  adapter: postgresql
+  # host: 127.0.0.1
+  database: tap
+  username: username
+  password: password
+  encoding: unicode
+  pool: 5
